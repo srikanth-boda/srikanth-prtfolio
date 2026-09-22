@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
           <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
             Full Stack MERN Developer building high-performance web applications and secure REST APIs.
             <br className="hidden sm:inline" />
-            Specialized in scalable frontend engineering, microservices, and automated Cloud CI/CD deployments.
+            Specialized in scalable frontend engineering and automated Cloud CI/CD deployments.
           </p>
 
           {/* Action CTAs in inspiration pill styling */}
@@ -212,7 +212,7 @@ export const Hero: React.FC = () => {
                   Speed Optimization
                 </div>
                 <div className="text-[10px] text-emerald-700 font-semibold mt-1 flex items-center gap-0.5">
-                  <span>↑</span> 4.2s to 1.8s at AIZEL
+                  <span>↑</span> 4.2s to 1.8s @DevGnan
                 </div>
               </div>
 

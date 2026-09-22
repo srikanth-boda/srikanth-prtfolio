@@ -2,7 +2,11 @@ import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenResumeModal?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -27,7 +31,7 @@ export const Footer: React.FC = () => {
           <a href="#home" className="hover:text-[#ebb02d] transition-colors">Home</a>
           <a href="#features" className="hover:text-[#ebb02d] transition-colors">Features</a>
           <a href="#portfolio" className="hover:text-[#ebb02d] transition-colors">Portfolio</a>
-          <a href="#resume" className="hover:text-[#ebb02d] transition-colors">Resume</a>
+          <a href="#tech-stack" className="hover:text-[#ebb02d] transition-colors">Tech Stack</a>
           <a href="#contact" className="hover:text-[#ebb02d] transition-colors">Contact</a>
         </div>
 

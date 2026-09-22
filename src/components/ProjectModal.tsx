@@ -41,9 +41,6 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               referrerPolicy="no-referrer"
               className="w-full h-full object-cover"
             />
-            <div className="absolute top-4 left-4 bg-[#ebb02d] text-black px-3.5 py-1.5 rounded-full text-xs font-bold tracking-wider shadow-sm">
-              {project.badge}
-            </div>
             <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-xs text-white bg-black/60 backdrop-blur-md px-4 py-2.5 rounded-xl">
               <span>Category: <strong>{project.category}</strong></span>
               <span>Role: <strong>{project.role}</strong></span>

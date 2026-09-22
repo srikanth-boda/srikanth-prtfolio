@@ -29,10 +29,10 @@ export const Portfolio: React.FC = () => {
             <span>VISIT MY PORTFOLIO</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#141414] tracking-tight leading-tight">
-            Featured Projects <span className="text-neutral-400 font-semibold block sm:inline">Case Studies</span>
+            Project <span className="text-neutral-400 font-semibold block sm:inline">Case Studies</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto font-normal">
-            Production full-stack applications, enterprise institutional portals, and high-concurrency microservices.
+            Production full-stack applications, enterprise institutional portals, and high-performance web systems.
           </p>
 
           {/* Filter Pills */}
@@ -77,15 +77,6 @@ export const Portfolio: React.FC = () => {
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
-                    <div
-                      className={`absolute top-3.5 left-3.5 px-3.5 py-1 rounded-full text-[11px] font-extrabold tracking-wider shadow-sm ${
-                        isNcfe
-                          ? 'bg-[#10b981] text-white'
-                          : 'bg-[#ebb02d] text-[#141414]'
-                      }`}
-                    >
-                      {project.badge}
-                    </div>
                     <div className="absolute bottom-3.5 right-3.5 bg-black/75 backdrop-blur-md text-white px-3.5 py-1 rounded-full text-[11px] font-semibold">
                       {project.category}
                     </div>

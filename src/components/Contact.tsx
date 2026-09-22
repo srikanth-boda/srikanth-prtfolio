@@ -38,7 +38,24 @@ export const Contact: React.FC = () => {
     }
 
     setIsSubmitting(true);
+
+    // Send email directly to Srikanth's inbox via mailto
+    const mailtoSubject = encodeURIComponent(
+      formData.subject.trim() || `Portfolio Inquiry from ${formData.name.trim()}`
+    );
+    const mailtoBody = encodeURIComponent(
+      `Hello Srikanth,\n\nYou have received a new message via your portfolio contact form:\n\n` +
+      `• Name: ${formData.name.trim()}\n` +
+      `• Email: ${formData.email.trim()}\n` +
+      `• Phone: ${formData.phone.trim() || 'Not provided'}\n\n` +
+      `Message:\n${formData.message.trim()}\n`
+    );
+    const mailtoUrl = `mailto:${PERSONAL_INFO.email}?subject=${mailtoSubject}&body=${mailtoBody}`;
+
     setTimeout(() => {
+      // Trigger the email client
+      window.location.href = mailtoUrl;
+
       setIsSubmitting(false);
       setSubmitted(true);
       setFormData({
@@ -48,8 +65,8 @@ export const Contact: React.FC = () => {
         subject: '',
         message: '',
       });
-      setTimeout(() => setSubmitted(false), 6000);
-    }, 1000);
+      setTimeout(() => setSubmitted(false), 8000);
+    }, 600);
   };
 
   return (
@@ -66,7 +83,7 @@ export const Contact: React.FC = () => {
             Connect With Me <span className="text-neutral-400 font-semibold block sm:inline">Get In Touch</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-neutral-600 max-w-2xl mx-auto font-normal">
-            Available for software engineering roles, high-concurrency MERN systems, and full-stack software development.
+            I am available for full-time engineering roles and freelancing projects. Connect with me via email or phone.
           </p>
         </div>
 
@@ -76,34 +93,18 @@ export const Contact: React.FC = () => {
           {/* Left Column: Developer Profile Card */}
           <div className="lg:col-span-5 inbio-card p-6 sm:p-8 flex flex-col justify-between">
             <div>
-              {/* Photo */}
-              <div className="aspect-[16/11] rounded-2xl overflow-hidden bg-neutral-200 mb-6 shadow-inner relative group">
-                <img
-                  src={PERSONAL_INFO.portraitImage}
-                  alt={PERSONAL_INFO.name}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-                <div className="absolute bottom-3.5 left-4 text-white">
-                  <span className="text-[11px] font-extrabold uppercase tracking-widest text-[#ebb02d]">
-                    Full Stack Developer
-                  </span>
-                  <p className="text-sm font-bold text-white">MERN & Cloud Specialist</p>
-                </div>
+              {/* Profile Header Badge */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#ebb02d]/15 text-[#141414] text-[11px] font-extrabold uppercase tracking-wider mb-4">
+                <span className="w-2 h-2 rounded-full bg-[#ebb02d] animate-pulse" />
+                <span>Available for Full-time Roles</span>
               </div>
 
               {/* Name & Role */}
-              <h3 className="text-2xl font-extrabold text-[#141414]">
+              <h3 className="text-2xl sm:text-3xl font-extrabold text-[#141414]">
                 {PERSONAL_INFO.name}
               </h3>
               <p className="text-xs font-bold text-[#ebb02d] uppercase tracking-wider mt-1">
                 Full Stack Developer (MERN Stack)
-              </p>
-
-              {/* Bio */}
-              <p className="mt-4 text-sm text-neutral-600 leading-relaxed font-normal">
-                I am available for full-time engineering roles, high-performance web engineering projects, and architectural collaborations. Connect with me via email or phone.
               </p>
 
               {/* Direct Details */}

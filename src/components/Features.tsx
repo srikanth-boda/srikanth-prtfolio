@@ -6,6 +6,7 @@ import {
   Zap,
   Database,
   CreditCard,
+  Search,
   ArrowRight,
   Check,
 } from 'lucide-react';
@@ -18,6 +19,7 @@ const iconMap: Record<string, React.ReactNode> = {
   Zap: <Zap className="w-8 h-8 text-[#ebb02d]" />,
   Database: <Database className="w-8 h-8 text-[#ebb02d]" />,
   CreditCard: <CreditCard className="w-8 h-8 text-[#ebb02d]" />,
+  Search: <Search className="w-8 h-8 text-[#ebb02d]" />,
 };
 
 export const Features: React.FC = () => {

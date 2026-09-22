@@ -16,11 +16,7 @@ import {
   SKILL_CATEGORIES,
 } from '../data/portfolioData';
 
-interface ResumeProps {
-  onOpenResumeModal?: () => void;
-}
-
-export const Resume: React.FC<ResumeProps> = ({ onOpenResumeModal }) => {
+export const Resume: React.FC = () => {
   const [activeTab, setActiveTab] = useState<'experience' | 'skills'>('experience');
 
   const tabs = [
@@ -45,7 +41,7 @@ export const Resume: React.FC<ResumeProps> = ({ onOpenResumeModal }) => {
             Hands-on software development experience, high-concurrency MERN systems, and cloud architectures.
           </p>
 
-          {/* Tab Selection */}
+          {/* Tab Selection & Modal Action */}
           <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
             {tabs.map((tab) => {
               const Icon = tab.icon;

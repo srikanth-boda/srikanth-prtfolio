@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ArrowUpRight } from 'lucide-react';
+import { Menu, X, ArrowUpRight, FileText } from 'lucide-react';
 
-export const Navbar: React.FC = () => {
+interface NavbarProps {
+  onOpenResumeModal?: () => void;
+}
+
+export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
@@ -10,7 +14,7 @@ export const Navbar: React.FC = () => {
     { name: 'Home', href: '#home' },
     { name: 'Features', href: '#features' },
     { name: 'Portfolio', href: '#portfolio' },
-    { name: 'Resume', href: '#resume' },
+    { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -18,7 +22,7 @@ export const Navbar: React.FC = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
 
-      const sections = ['home', 'features', 'portfolio', 'resume', 'contact'];
+      const sections = ['home', 'features', 'portfolio', 'tech-stack', 'contact'];
       const scrollPosition = window.scrollY + 180;
 
       for (const sectionId of sections) {
@@ -94,30 +98,35 @@ export const Navbar: React.FC = () => {
 
           {/* Right Action CTA Button (Pill shape in golden yellow) */}
           <div className="hidden sm:flex items-center gap-3">
-            <a
-              id="nav-contact-cta"
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className="bg-[#ebb02d] hover:bg-[#d99f24] text-[#141414] text-xs font-extrabold px-5 py-2.5 rounded-full flex items-center gap-1.5 transition-all transform hover:scale-[1.03] shadow-md shadow-[#ebb02d]/20"
+            <button
+              type="button"
+              id="nav-resume-cta"
+              onClick={onOpenResumeModal}
+              className="bg-[#ebb02d] hover:bg-[#d99f24] text-[#141414] text-xs font-extrabold px-5 py-2.5 rounded-full flex items-center gap-1.5 transition-all transform hover:scale-[1.03] shadow-md shadow-[#ebb02d]/20 cursor-pointer"
+              title="View & Download Resume"
             >
-              <span>Connect</span>
-              <span className="text-sm font-bold">↳</span>
-            </a>
+              <FileText className="w-3.5 h-3.5" />
+              <span>Resume</span>
+              <span className="text-xs">↗</span>
+            </button>
           </div>
 
           {/* Mobile Menu Toggle Button */}
           <div className="flex md:hidden items-center gap-2">
-            <a
-              href="#contact"
-              onClick={(e) => handleNavClick(e, '#contact')}
-              className="bg-[#ebb02d] text-[#141414] text-[11px] font-bold px-3 py-1.5 rounded-full flex items-center gap-1"
+            <button
+              type="button"
+              id="nav-mobile-resume-btn"
+              onClick={onOpenResumeModal}
+              className="bg-[#ebb02d] text-[#141414] text-[11px] font-extrabold px-3 py-1.5 rounded-full flex items-center gap-1 cursor-pointer"
+              title="View & Download Resume"
             >
-              <span>Connect</span>
-            </a>
+              <FileText className="w-3 h-3" />
+              <span>Resume</span>
+            </button>
             <button
               id="mobile-menu-toggle-btn"
               onClick={() => setMobileMenuOpen(true)}
-              className="p-1.5 text-neutral-300 hover:text-white rounded-full bg-white/5"
+              className="p-1.5 text-neutral-300 hover:text-white rounded-full bg-white/5 cursor-pointer"
               aria-label="Open Navigation"
             >
               <Menu className="w-5 h-5" />
@@ -182,16 +191,29 @@ export const Navbar: React.FC = () => {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-6 border-t border-neutral-800">
+            <div className="pt-6 border-t border-neutral-800 flex flex-col gap-2.5">
+              <button
+                type="button"
+                id="drawer-view-resume-btn"
+                onClick={() => {
+                  setMobileMenuOpen(false);
+                  onOpenResumeModal?.();
+                }}
+                className="w-full bg-[#ebb02d] hover:bg-[#d99f24] text-[#141414] text-xs font-bold py-3 rounded-full flex items-center justify-center gap-2 transition-colors shadow-md cursor-pointer"
+              >
+                <FileText className="w-4 h-4" />
+                <span>View & Download Resume</span>
+                <span className="font-bold">↗</span>
+              </button>
               <a
                 href="#contact"
                 onClick={(e) => handleNavClick(e, '#contact')}
-                className="w-full bg-[#ebb02d] hover:bg-[#d99f24] text-[#141414] text-xs font-bold py-3.5 rounded-full flex items-center justify-center gap-1.5 transition-colors mb-3 shadow-md"
+                className="w-full border border-neutral-700 hover:border-neutral-500 text-neutral-200 text-xs font-bold py-2.5 rounded-full flex items-center justify-center gap-1.5 transition-colors"
               >
-                <span>Connect With Me</span>
+                <span>Get In Touch</span>
                 <span className="font-bold">↳</span>
               </a>
-              <div className="text-[11px] text-neutral-400 text-center font-medium">
+              <div className="text-[11px] text-neutral-400 text-center font-medium mt-1">
                 Hyderabad • bodasrikanth2004@gmail.com
               </div>
             </div>
