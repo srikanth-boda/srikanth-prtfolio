@@ -40,15 +40,15 @@ export const Hero: React.FC = () => {
   }, [currentText, isDeleting, currentRoleIndex, roles, typingSpeed]);
 
   return (
-    <section id="home" className="pt-28 sm:pt-36 pb-16 sm:pb-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section id="home" className="pt-20 sm:pt-24 lg:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
         
         {/* Left Column: Hero Text Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
+        <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left -mt-1 lg:-mt-2">
           
 
           {/* Main Name & Title with Inspiration Font Hierarchy */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#141414] tracking-tight leading-[1.15] mb-3">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#141414] tracking-tight leading-[1.15] mb-2.5">
             Hi, I'm <span className="text-[#141414]">{PERSONAL_INFO.name}</span>
             <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-[#ebb02d] text-[#141414] text-base font-black ml-2 align-middle shadow-xs">
               ↳
@@ -64,14 +64,14 @@ export const Hero: React.FC = () => {
           </h1>
 
           {/* Bio Description Strictly Reduced to 2 Lines */}
-          <p className="mt-4 text-sm sm:text-base text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
+          <p className="mt-3 sm:mt-3.5 text-sm sm:text-base text-neutral-600 leading-relaxed max-w-xl mx-auto lg:mx-0 font-normal">
             Full Stack MERN Developer building high-performance web applications and secure REST APIs.
             <br className="hidden sm:inline" />
             Specialized in scalable frontend engineering and automated Cloud CI/CD deployments.
           </p>
 
           {/* Action CTAs in inspiration pill styling */}
-          <div className="mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
+          <div className="mt-5 sm:mt-6 flex flex-wrap items-center justify-center lg:justify-start gap-3">
             <a
               href="#contact"
               className="bg-[#ebb02d] hover:bg-[#d99f24] text-[#141414] text-xs font-extrabold px-6 py-3.5 rounded-full flex items-center gap-2 transition-all shadow-md shadow-[#ebb02d]/25 hover:scale-[1.02]"
@@ -83,17 +83,17 @@ export const Hero: React.FC = () => {
               href="#portfolio"
               className="bg-white hover:bg-neutral-50 text-[#141414] text-xs font-extrabold px-6 py-3.5 rounded-full flex items-center gap-2 transition-all border border-neutral-300 shadow-xs hover:scale-[1.02]"
             >
-              <span>View Portfolio</span>
+              <span>View Projects</span>
               <span className="font-black text-sm">↳</span>
             </a>
           </div>
 
           {/* Social & Skill Dual Section */}
-          <div className="mt-8 sm:mt-10 grid grid-cols-1 sm:grid-cols-2 gap-8 border-t border-neutral-200/80 pt-7">
+          <div className="mt-6 sm:mt-8 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 border-t border-neutral-200/80 pt-5 sm:pt-6">
             
             {/* Find With Me */}
             <div className="text-center sm:text-left">
-              <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-3.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2.5 sm:mb-3">
                 FIND WITH ME
               </span>
               <div className="flex items-center justify-center sm:justify-start gap-3">
@@ -101,7 +101,7 @@ export const Hero: React.FC = () => {
                   href={PERSONAL_INFO.githubUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all"
                   aria-label="GitHub Profile"
                   title="GitHub"
                 >
@@ -111,7 +111,7 @@ export const Hero: React.FC = () => {
                   href={PERSONAL_INFO.linkedinUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all"
                   aria-label="LinkedIn Profile"
                   title="LinkedIn"
                 >
@@ -119,7 +119,7 @@ export const Hero: React.FC = () => {
                 </a>
                 <a
                   href={`mailto:${PERSONAL_INFO.email}`}
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all"
                   aria-label="Send Email"
                   title="Email"
                 >
@@ -130,30 +130,30 @@ export const Hero: React.FC = () => {
 
             {/* Best Skill On */}
             <div className="text-center sm:text-left">
-              <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-3.5">
+              <span className="text-xs font-bold uppercase tracking-wider text-neutral-500 block mb-2.5 sm:mb-3">
                 BEST SKILL ON
               </span>
               <div className="flex items-center justify-center sm:justify-start gap-3">
                 <div
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
                   title="React.js"
                 >
                   <Code2 className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
                   title="Node.js & Express"
                 >
                   <Server className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
                   title="MongoDB"
                 >
                   <Database className="w-5 h-5 group-hover:scale-110 transition-transform" />
                 </div>
                 <div
-                  className="w-12 h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
+                  className="w-11 h-11 sm:w-12 sm:h-12 inbio-btn flex items-center justify-center text-neutral-700 hover:text-black transition-all group"
                   title="Docker & Kubernetes"
                 >
                   <Container className="w-5 h-5 group-hover:scale-110 transition-transform" />
@@ -166,11 +166,11 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Tactile Portrait Card */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end">
+        <div className="lg:col-span-5 flex justify-center lg:justify-end -mt-2 lg:-mt-4">
           <div className="relative w-full max-w-sm sm:max-w-md">
             {/* The main InBio Tactile Card */}
-            <div className="inbio-card p-5 sm:p-7 relative overflow-hidden">
-              <div className="aspect-[4/3.8] rounded-2xl overflow-hidden bg-neutral-100 shadow-inner relative group">
+            <div className="inbio-card p-4 sm:p-6 relative overflow-hidden">
+              <div className="aspect-[4/3.7] rounded-2xl overflow-hidden bg-neutral-100 shadow-inner relative group">
                 <img
                   src={PERSONAL_INFO.portraitImage}
                   alt={PERSONAL_INFO.name}
@@ -193,7 +193,7 @@ export const Hero: React.FC = () => {
               </div>
 
               {/* Quick status badge */}
-              <div className="mt-4 flex items-center justify-between text-xs text-neutral-600 font-semibold px-2">
+              <div className="mt-3.5 flex items-center justify-between text-xs text-neutral-600 font-semibold px-1 sm:px-2">
                 <span className="flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-[#ebb02d] animate-pulse" />
                   Available for full-time roles
@@ -203,7 +203,7 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Floating Dual Achievement Cards matching inspiration photo */}
-            <div className="absolute -bottom-6 left-2 right-2 sm:left-4 sm:right-4 grid grid-cols-2 gap-3 z-10">
+            <div className="absolute -bottom-5 sm:-bottom-6 left-2 right-2 sm:left-4 sm:right-4 grid grid-cols-2 gap-3 z-10">
               <div className="bg-white/95 backdrop-blur-md rounded-2xl p-3 shadow-xl border border-neutral-200/90 flex flex-col justify-between">
                 <div className="text-xl sm:text-2xl font-black text-[#141414] tracking-tight">
                   57<span className="text-[#ebb02d] text-base font-extrabold">%</span>

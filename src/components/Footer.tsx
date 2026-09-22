@@ -30,7 +30,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenResumeModal }) => {
         <div className="flex flex-wrap justify-center items-center gap-6 text-xs font-bold text-neutral-300 uppercase tracking-wider">
           <a href="#home" className="hover:text-[#ebb02d] transition-colors">Home</a>
           <a href="#features" className="hover:text-[#ebb02d] transition-colors">Features</a>
-          <a href="#portfolio" className="hover:text-[#ebb02d] transition-colors">Portfolio</a>
+          <a href="#portfolio" className="hover:text-[#ebb02d] transition-colors">Projects</a>
           <a href="#tech-stack" className="hover:text-[#ebb02d] transition-colors">Tech Stack</a>
           <a href="#contact" className="hover:text-[#ebb02d] transition-colors">Contact</a>
         </div>

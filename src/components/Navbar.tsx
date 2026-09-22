@@ -13,7 +13,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'Features', href: '#features' },
-    { name: 'Portfolio', href: '#portfolio' },
+    { name: 'Projects', href: '#portfolio' },
     { name: 'Tech Stack', href: '#tech-stack' },
     { name: 'Contact', href: '#contact' },
   ];
@@ -55,7 +55,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenResumeModal }) => {
   return (
     <>
       {/* Floating Rounded Shape Navbar */}
-      <header className="fixed top-4 sm:top-5 left-0 right-0 z-50 px-4 sm:px-6 max-w-7xl mx-auto">
+      <header className="fixed top-2 sm:top-3 left-0 right-0 z-50 px-4 sm:px-6 max-w-7xl mx-auto">
         <div
           id="main-navbar"
           className={`bg-[#141414]/95 backdrop-blur-md text-white rounded-full px-5 sm:px-8 py-2 sm:py-2.5 flex items-center justify-between transition-all duration-300 shadow-xl border border-white/10 ${
