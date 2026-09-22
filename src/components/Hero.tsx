@@ -40,11 +40,11 @@ export const Hero: React.FC = () => {
   }, [currentText, isDeleting, currentRoleIndex, roles, typingSpeed]);
 
   return (
-    <section id="home" className="pt-20 sm:pt-24 lg:pt-24 pb-12 sm:pb-16 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+    <section id="home" className="pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
         
         {/* Left Column: Hero Text Content */}
-        <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left -mt-1 lg:-mt-2">
+        <div className="lg:col-span-7 flex flex-col justify-center text-center lg:text-left">
           
 
           {/* Main Name & Title with Inspiration Font Hierarchy */}
@@ -166,7 +166,7 @@ export const Hero: React.FC = () => {
         </div>
 
         {/* Right Column: Tactile Portrait Card */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end -mt-2 lg:-mt-4">
+        <div className="lg:col-span-5 flex justify-center lg:justify-end">
           <div className="relative w-full max-w-sm sm:max-w-md">
             {/* The main InBio Tactile Card */}
             <div className="inbio-card p-4 sm:p-6 relative overflow-hidden">

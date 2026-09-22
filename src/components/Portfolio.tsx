@@ -26,7 +26,7 @@ export const Portfolio: React.FC = () => {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full bg-[#ebb02d] text-[#141414] text-[11px] font-extrabold uppercase tracking-[2px] mb-3 shadow-xs">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>VISIT MY PORTFOLIO</span>
+            <span>VIEW MY WORK</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#141414] tracking-tight leading-tight">
             Project <span className="text-neutral-400 font-semibold block sm:inline">Case Studies</span>
