@@ -6,7 +6,10 @@ import {
 } from 'lucide-react';
 import { PROJECTS } from '../data/portfolioData';
 import { Project } from '../types';
-import { ProjectModal } from './ProjectModal';
+
+const ProjectModal = React.lazy(() =>
+  import('./ProjectModal').then((m) => ({ default: m.ProjectModal }))
+);
 
 export const Portfolio: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>('All');
@@ -74,6 +77,10 @@ export const Portfolio: React.FC = () => {
                     <img
                       src={project.image}
                       alt={project.title}
+                      loading="lazy"
+                      decoding="async"
+                      width="600"
+                      height="375"
                       referrerPolicy="no-referrer"
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -208,10 +215,14 @@ export const Portfolio: React.FC = () => {
         </div>
 
         {/* Project Details Modal */}
-        <ProjectModal
-          project={selectedProject}
-          onClose={() => setSelectedProject(null)}
-        />
+        {selectedProject && (
+          <React.Suspense fallback={null}>
+            <ProjectModal
+              project={selectedProject}
+              onClose={() => setSelectedProject(null)}
+            />
+          </React.Suspense>
+        )}
 
       </div>
     </section>

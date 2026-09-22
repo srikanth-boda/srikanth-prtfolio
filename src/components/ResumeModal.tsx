@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { X, Printer, Copy, Check, Download, FileText } from 'lucide-react';
-import { jsPDF } from 'jspdf';
+import { X, Printer, Copy, Check, Download, FileText, Loader2 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
 interface ResumeModalProps {
@@ -10,6 +9,7 @@ interface ResumeModalProps {
 
 export const ResumeModal: React.FC<ResumeModalProps> = ({ isOpen, onClose }) => {
   const [copied, setCopied] = useState(false);
+  const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
 
   if (!isOpen) return null;
 
@@ -68,12 +68,15 @@ CERTIFICATIONS & ACHIEVEMENTS
     setTimeout(() => setCopied(false), 2000);
   };
 
-  const handleDownload = () => {
-    const doc = new jsPDF({
-      orientation: 'portrait',
-      unit: 'mm',
-      format: 'a4',
-    });
+  const handleDownload = async () => {
+    setIsGeneratingPdf(true);
+    try {
+      const { jsPDF } = await import('jspdf');
+      const doc = new jsPDF({
+        orientation: 'portrait',
+        unit: 'mm',
+        format: 'a4',
+      });
 
     const pageWidth = doc.internal.pageSize.getWidth();
     const margin = 12;
@@ -278,6 +281,11 @@ CERTIFICATIONS & ACHIEVEMENTS
     });
 
     doc.save('Boda_Srikanth_Resume.pdf');
+    } catch (err) {
+      console.error('Failed to generate PDF:', err);
+    } finally {
+      setIsGeneratingPdf(false);
+    }
   };
 
   return (
@@ -312,11 +320,12 @@ CERTIFICATIONS & ACHIEVEMENTS
             <button
               id="modal-download-resume-btn"
               onClick={handleDownload}
-              className="px-3.5 py-1.5 rounded-full bg-[#ebb02d] text-[#141414] hover:bg-[#d99f24] text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm cursor-pointer"
+              disabled={isGeneratingPdf}
+              className="px-3.5 py-1.5 rounded-full bg-[#ebb02d] text-[#141414] hover:bg-[#d99f24] text-xs font-bold flex items-center gap-1.5 transition-all shadow-sm cursor-pointer disabled:opacity-75"
               title="Download Resume as PDF"
             >
-              <Download className="w-3.5 h-3.5" />
-              <span>Download PDF</span>
+              {isGeneratingPdf ? <Loader2 className="w-3.5 h-3.5 animate-spin" /> : <Download className="w-3.5 h-3.5" />}
+              <span>{isGeneratingPdf ? 'Generating...' : 'Download PDF'}</span>
             </button>
 
             {/* Print / Save PDF Button */}

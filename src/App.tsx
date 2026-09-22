@@ -11,7 +11,10 @@ import { Portfolio } from './components/Portfolio';
 import { TechStack } from './components/TechStack';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { ResumeModal } from './components/ResumeModal';
+
+const ResumeModal = React.lazy(() =>
+  import('./components/ResumeModal').then((m) => ({ default: m.ResumeModal }))
+);
 
 export default function App() {
   const [isResumeModalOpen, setIsResumeModalOpen] = useState(false);
@@ -43,10 +46,14 @@ export default function App() {
       <Footer onOpenResumeModal={() => setIsResumeModalOpen(true)} />
 
       {/* Full Resume Preview & Download Modal */}
-      <ResumeModal
-        isOpen={isResumeModalOpen}
-        onClose={() => setIsResumeModalOpen(false)}
-      />
+      {isResumeModalOpen && (
+        <React.Suspense fallback={null}>
+          <ResumeModal
+            isOpen={isResumeModalOpen}
+            onClose={() => setIsResumeModalOpen(false)}
+          />
+        </React.Suspense>
+      )}
     </div>
   );
 }

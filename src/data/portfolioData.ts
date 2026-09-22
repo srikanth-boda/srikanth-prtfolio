@@ -1,10 +1,10 @@
 import { Project, Experience, Education, SkillCategory, Certification, Achievement, FeatureService } from '../types';
-import devPortrait from '../assets/images/srikanth1.png';
-import financeSchoolProjectImg from '../assets/images/finance_school_project.png';
-import cricketProjectImg from '../assets/images/cricket_ground_booking_1789952589332.jpg';
-import ecommerceProjectImg from '../assets/images/ecommerce_api_dashboard_1789952602025.jpg';
-import ncfeProjectImg from '../assets/images/ncfe_schools_project.png';
-import ncfeMockupImg from '../assets/images/ncfe_schools_mockup.png';
+import devPortrait from '../assets/images/srikanth1.webp';
+import financeSchoolProjectImg from '../assets/images/finance_school_project.webp';
+import cricketProjectImg from '../assets/images/cricket_ground_booking_1789952589332.webp';
+import ecommerceProjectImg from '../assets/images/ecommerce_api_dashboard_1789952602025.webp';
+import ncfeProjectImg from '../assets/images/ncfe_schools_project.webp';
+import ncfeMockupImg from '../assets/images/ncfe_schools_mockup.webp';
 
 export const PERSONAL_INFO = {
   name: 'Boda Srikanth',

@@ -174,6 +174,10 @@ export const Hero: React.FC = () => {
                 <img
                   src={PERSONAL_INFO.portraitImage}
                   alt={PERSONAL_INFO.name}
+                  width="400"
+                  height="370"
+                  fetchPriority="high"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-cover object-top filter brightness-[0.98] contrast-[1.02] group-hover:scale-105 transition-transform duration-500"
                 />
